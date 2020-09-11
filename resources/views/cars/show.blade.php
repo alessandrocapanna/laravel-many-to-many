@@ -19,4 +19,5 @@
   For contacts: <br>
   <i>{{ $car->user->email}}</i>
 </p>
+<p><a href="{{ route('cars.edit', $car)}}" >MODIFICA</a></p>
 <a href="{{ route('cars.index')}}">go back</a>
