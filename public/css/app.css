@@ -1,34 +1,39 @@
 * {
   padding: 0;
-  margin:0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-header{
+header {
   text-align: center;
-  h1 {
-    text-transform: uppercase;
-  }
-
 }
+
+header h1 {
+  text-transform: uppercase;
+}
+
 .elimina {
   background-color: green;
   color: white;
   border-radius: 15px;
-  border:none;
+  border: none;
   padding: 10px;
 }
+
 a {
   text-decoration: none;
   color: black;
 }
+
 .car {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 20px;
   font-size: 25px;
-  input{
-    margin-left: 10px;
-  }
 }
+
+.car input {
+  margin-left: 10px;
+}
+

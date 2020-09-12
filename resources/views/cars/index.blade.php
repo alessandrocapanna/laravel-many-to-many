@@ -1,17 +1,22 @@
-<h1>Cars list</h1>
-<div>
-  <a href="{{route('cars.create')}}">Add new car</a>
-</div>
-<br>
-<br>
-@foreach ($cars as $car)
-  <div>
-    <a href="{{ route('cars.show', $car)}}" >{{$car->manifacturer}} {{ $car->engine}}</a>
-  </div>
+@extends('layout.app')
+@section('content')
 
-  <form action="{{ route('cars.destroy', $car->id) }}" method="post">
-     @csrf
-     @method('DELETE')
-     <input type="submit" value="Elimina">
-  </form>
-@endforeach
+  <header>
+    <h1>Cars list</h1>
+    <a href="{{route('cars.create')}}">Add new car</a>
+  </header>
+
+  <br>
+  <br>
+  @foreach ($cars as $car)
+    <div class="car">
+      <a href="{{ route('cars.show', $car)}}" >{{$car->manifacturer}} {{ $car->engine}}</a>
+
+      <form action="{{ route('cars.destroy', $car->id) }}" method="post">
+         @csrf
+         @method('DELETE')
+         <input class="elimina" type="submit" value="Elimina">
+      </form>
+    </div>
+  @endforeach
+@endsection
