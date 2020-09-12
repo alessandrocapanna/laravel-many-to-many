@@ -114,9 +114,10 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
+      $car->tags()->detach();
       $car->delete();
 
-      return view('cars.index');
+      return redirect()->route('cars.index');
     }
 
     public function validationData() {
